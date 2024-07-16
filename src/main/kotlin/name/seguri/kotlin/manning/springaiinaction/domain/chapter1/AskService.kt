@@ -1,4 +1,4 @@
-package name.seguri.kotlin.manning.springaiinaction
+package name.seguri.kotlin.manning.springaiinaction.domain.chapter1
 
 import org.springframework.ai.chat.client.ChatClient
 import org.springframework.stereotype.Service
