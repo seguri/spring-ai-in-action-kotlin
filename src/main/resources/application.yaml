@@ -12,3 +12,14 @@ spring:
     ollama:
       chat:
         model: llama3.1
+  cloud:
+    function:
+      # The document loading pipeline. Each function is declared as a bean.
+      definition: fileSupplier|documentReader|splitter|titleDeterminer|vectorStoreConsumer
+file:
+  supplier:
+    directory: c:/Users/msegu/Documents/springaidropoff
+    filename-regex: .*\.(pdf|docx|txt)
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
