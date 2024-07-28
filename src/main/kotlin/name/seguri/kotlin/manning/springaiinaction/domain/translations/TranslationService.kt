@@ -24,8 +24,7 @@ class TranslationService(builder: ChatClient.Builder) {
   fun translateStream(message: String, from: String, to: String): Flux<String> =
     chatClient
       .prompt()
-      .system(getTranslationTemplate(from, to))
-      .user(message)
+      .user{ it.text(getTranslationTemplate(from, to)).param("message", message) }
       .stream()
       .contentWithWhitespace()
 
